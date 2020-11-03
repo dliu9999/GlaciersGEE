@@ -1,6 +1,6 @@
 # Glaciers-GEE
 
-Python ETL package to download Landsat images of Glaciers given polygons from the GLIMS glaciers database for data analysis.
+Python ETL package to download Landsat images of Glaciers given polygons from the GLIMS/WGMS glaciers database for data analysis.
 
 ## Usage Steps
 1. Open `main.py`
@@ -13,6 +13,6 @@ Python ETL package to download Landsat images of Glaciers given polygons from th
     2. Edit root folder name at the top of `drive.py` if desired (currently set to 'glaciers') 
 4. Run
     1. Setup `Glaciers-GEE` by going to the root project directory and running `python3 setup.py develop` for unix, `python setup.py develop` for Windows
-    2. Download the `joined` folder from the shared drive and put it in the `data` folder in the root directory. 
+    2. UCSD project team: Download the `joined` folder from the shared drive and put it in the `data` folder in the root directory. Others: Download the entire GLIMS and WGMS databases online and put them in the `data` folder and run code from `query.py` (TODO).
     3. Change directory in terminal to the directory with source code (`Glaciers-GEE`)
     4. Run `python3 main.py` for unix, `python main.py` for Windows
