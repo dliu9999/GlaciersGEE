@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*$py.class
+.vscode/
+GlacierProject.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# data
+data/*
+!data/.gitkeep 
+
+# misc
+*.csv
+client_secrets.json
+token.json
+archive.py
+*.log
