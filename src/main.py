@@ -1,6 +1,6 @@
-from GlacierProject.query import *
-from GlacierProject.gee import *
-from GlacierProject.drive import *
+from GlaciersGEE.query import *
+from GlaciersGEE.gee import *
+from GlaciersGEE.drive import *
 import ee
 import threading
 from multiprocessing.dummy import Pool as ThreadPool

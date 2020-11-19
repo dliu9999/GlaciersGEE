@@ -4,7 +4,7 @@ import sys
 import ee
 import pandas as pd
 from datetime import date
-from GlacierProject.drive import *
+from GlaciersGEE.drive import *
 
 #Reorganize landsat download function
 def ee_download(
