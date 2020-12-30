@@ -1,4 +1,4 @@
-# Glaciers-GEE
+# GlaciersGEE
 
 Python ETL package to download Landsat images of Glaciers given polygons from the GLIMS/WGMS glaciers database for data analysis.
 
