@@ -2,10 +2,7 @@ from GlaciersGEE.query import *
 from GlaciersGEE.gee import *
 from GlaciersGEE.drive import *
 import ee
-import threading
-from multiprocessing.dummy import Pool as ThreadPool
 from tenacity import retry, wait_exponential
-import logging
 
 def authenticate():
 	# Earth Engine authentication
@@ -74,17 +71,7 @@ def run_pipeline(glims_id_input, datadir, folder_name, delim=None, ee_params=Non
 		ids_list = glims_id_input
 
 	train_set = prep_joined(ids_list, datadir)
-	if pool:
-		pool = ThreadPool(2)
-		pool.map(lambda glims_id: single_glacier(glims_id, train_set, drive_service, folder_name), ids_list)
-	else:
-		for glims_id in ids_list:
-				single_glacier(glims_id, train_set, drive_service, folder_name)
+	# run glaciers one at a time
+	for glims_id in ids_list:
+			single_glacier(glims_id, train_set, drive_service, folder_name)
 
-if __name__ == '__main__':
-	log_format = '%(asctime)s %(filename)s: %(message)s'
-	logging.basicConfig(filename="test.log", format=log_format)
-	try:
-		run_pipeline('ids.txt', '../data/', 'Glacier_Tiffs', delim='\n')
-	except Exception as e:
-		logging.error("exception occurred", exc_info=True)
